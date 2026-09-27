@@ -9,6 +9,15 @@
   gsap.registerPlugin(ScrollTrigger, MorphSVGPlugin);
   root.classList.add('story-on');
 
+  // A reload starts the story again from the top. Left to itself the browser restores the old scroll position,
+  // landing mid-story with the entrance and the scrubbed timeline both driving the words. A link to a section
+  // (#download…) still goes where it points.
+  // ScrollTrigger keeps its own scroll memory and puts scrollRestoration back to «auto», so it is told directly;
+  // and the page is taken to the top as it unloads, which no restoration can undo.
+  ScrollTrigger.clearScrollMemory('manual');
+  if (!location.hash) window.scrollTo(0, 0);
+  window.addEventListener('beforeunload', function () { window.scrollTo(0, 0); });
+
   var brand = getComputedStyle(root).getPropertyValue('--brand').trim();
   var lower = document.getElementById('lidLower').getAttribute('d');
   var upper = document.getElementById('lidUpper').getAttribute('d');
@@ -32,23 +41,23 @@
   // The mark is centred by GSAP rather than CSS, so its own scale tween keeps the centring.
   gsap.set('.story-mark', { xPercent: -50, yPercent: -50, left: '50%', top: '50%' });
 
-  // A blink: the lids meet at the pupil's height and open again; the pupil squeezes shut with them.
+  // A blink: the whole eye closes into a line through the pupil's centre (628, 440 in the drawing) and opens again.
+  // svgOrigin is in the drawing's own coordinates; a px transformOrigin is read against each group's own box, which
+  // dropped the pupil below the eye (seen 2026-09-27).
   function blink(tl, at, close, open) {
-    tl.to('#upperG', { y: 95, duration: close, ease: 'power2.in' }, at)
-      .to('#lowerG', { y: -95, duration: close, ease: 'power2.in' }, at)
-      .to('#pupilG', { scaleY: 0.1, transformOrigin: '628px 440px', duration: close, ease: 'power2.in' }, at)
-      .to(['#upperG', '#lowerG'], { y: 0, duration: open, ease: 'power2.out' }, at + close)
-      .to('#pupilG', { scaleY: 1, duration: open, ease: 'power2.out' }, at + close);
+    tl.to('#eyeG', { scaleY: 0.06, svgOrigin: '628 440', duration: close, ease: 'power2.in' }, at)
+      .to('#eyeG', { scaleY: 1, svgOrigin: '628 440', duration: open, ease: 'power2.out' }, at + close);
     return tl;
   }
 
-  // 1. On arrival: the chart builds itself — bars rise, the trend line draws, the data point lands.
+  // 1. On arrival: the chart builds itself — bars rise, the trend line draws, the data point lands. The words fade
+  // in through their wrapper, so this never fights the scroll timeline, which owns each line's own opacity.
   gsap.set(trend, { strokeDasharray: trendLength, strokeDashoffset: trendLength });
   gsap.timeline({ defaults: { ease: 'power3.out' } })
     .from('.bar', { scaleY: 0, transformOrigin: '50% 100%', duration: 1.1, stagger: 0.14 })
     .to(trend, { strokeDashoffset: 0, duration: 1.1, ease: 'power2.inOut' }, '-=0.5')
     .from('#dot', { scale: 0, transformOrigin: '50% 50%', duration: 0.6, ease: 'back.out(3)' }, '-=0.15')
-    .from('#line1', { opacity: 0, y: 24, duration: 0.8 }, '-=0.7');
+    .from('.story-words', { opacity: 0, y: 24, duration: 0.8 }, '-=0.7');
 
   // 2. On scroll (scrubbed, so it follows the finger both ways): the numbers become the eye, which then blinks.
   var story = gsap.timeline({
@@ -76,8 +85,7 @@
     } else if (!on && idleTl) {
       idleTl.kill();
       idleTl = null;
-      gsap.set(['#upperG', '#lowerG'], { y: 0 });
-      gsap.set('#pupilG', { scaleY: 1 });
+      gsap.set('#eyeG', { scaleY: 1, svgOrigin: '628 440' });
     }
   }
 })();

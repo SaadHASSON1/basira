@@ -178,3 +178,9 @@ code { font-size: .85em; background: var(--band); padding: .05rem .3rem; border-
 .card:hover, .steps li:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--brand) 40%, var(--line));
   box-shadow: 0 14px 34px color-mix(in srgb, var(--brand) 14%, transparent); }
 @media (prefers-reduced-motion: reduce) { .card, .steps li { transition: none; } .card:hover, .steps li:hover { transform: none; } }
+
+/* FAQ: a question is a control, not text to select; its answer opens softly instead of jumping in. */
+summary { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; list-style-position: inside; }
+details[open] > p { animation: answer-in .32s ease-out; }
+@keyframes answer-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { details[open] > p { animation: none; } }
