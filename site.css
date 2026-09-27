@@ -139,33 +139,42 @@ th { background: var(--band); }
 code { font-size: .85em; background: var(--band); padding: .05rem .3rem; border-radius: 5px; word-break: break-word; }
 
 /* Hero story: bars → eye (hero.js). Without JavaScript it stays a still chart with its first line. */
-.story { position: relative; }
+.story { position: relative; padding: 0; }
 .story-stage { min-height: 70vh; display: grid; place-items: center; padding: 2rem 16px; }
-.story-mark { width: min(46vh, 74vw); height: auto; overflow: visible; }
+.story-mark { --mark-w: min(44vh, 72vw); width: var(--mark-w); height: auto; overflow: visible; }
 .story-grid line { stroke: var(--line); stroke-width: 2; }
 .bar { fill: var(--brand); }
 #bar1 { opacity: .45; } #bar2 { opacity: .6; } #bar3 { opacity: .75; }
 #trend { fill: none; stroke: var(--accent); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
 #dot { fill: var(--accent); }
 .lid-target { visibility: hidden; }
-.story-words { position: relative; width: 100%; min-height: 4.5rem; text-align: center; }
-.story-line { margin: 0; font-size: clamp(1.5rem, 4vw, 2.6rem); font-weight: 700; }
+.story-words { width: 100%; text-align: center; }
+.story-line { margin: 0; font-size: clamp(1.45rem, 3.8vw, 2.6rem); font-weight: 700; line-height: 1.5; }
 .story-line strong { color: var(--brand); }
 #line2 { display: none; }
-.story-hint { color: var(--muted); font-size: .9rem; margin: 0; }
-.story-hint::after { content: "↓"; display: block; text-align: center; animation: nudge 1.6s ease-in-out infinite; }
-@keyframes nudge { 50% { transform: translateY(6px); } }
 
-.story-on .story { height: 300vh; }
-.story-on .story-stage { position: sticky; top: 0; height: 100vh; min-height: 0; padding: 72px 16px 1.5rem; grid-template-rows: auto auto auto; align-content: center; gap: 1.5rem; }
-.story-on .story-words { display: grid; }
+/* Animated: the stage fills the screen from its very top (under the translucent header), the mark sits at the
+   exact centre of the screen and the words hang below it, so nothing pushes the mark off centre. */
+.story-on .story { height: 460vh; margin-top: -65px; }
+.story-on .story-stage { position: sticky; top: 0; height: 100vh; min-height: 0; padding: 0; display: block; }
+.story-on .story-mark { position: absolute; left: 50%; top: 50%; }
+.story-on .story-words { position: absolute; inset-inline: 0; padding: 0 16px;
+  top: calc(50% + var(--mark-w, 44vh) * 0.63 + 1.2rem); display: grid; }
+.story-on .story-words { --mark-w: min(44vh, 72vw); }
 .story-on .story-line { grid-area: 1 / 1; }
 .story-on #line2 { display: block; opacity: 0; }
-.story-on.story-still .story { height: auto; }
-.story-on.story-still .story-stage { position: static; height: auto; }
-.story-on.story-still #line1, .story-on.story-still .story-hint { display: none; }
+.story-on.story-still .story { height: auto; margin-top: 0; }
+.story-on.story-still .story-stage { position: static; height: auto; display: grid; padding: 2rem 16px; }
+.story-on.story-still .story-mark { position: static; transform: none; }
+.story-on.story-still .story-words { position: static; }
+.story-on.story-still #line1 { display: none; }
 
 .hero { padding-top: 2rem; }
 .hero-grid { grid-template-columns: 1fr; max-width: 860px; text-align: center; }
 .hero-grid .cta { justify-content: center; }
-@media (prefers-reduced-motion: reduce) { .story-hint::after { animation: none; } }
+
+/* Gentle depth on cards; nothing that moves on its own. */
+.card, .steps li { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.card:hover, .steps li:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--brand) 40%, var(--line));
+  box-shadow: 0 14px 34px color-mix(in srgb, var(--brand) 14%, transparent); }
+@media (prefers-reduced-motion: reduce) { .card, .steps li { transition: none; } .card:hover, .steps li:hover { transform: none; } }

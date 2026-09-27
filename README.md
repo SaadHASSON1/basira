@@ -7,7 +7,7 @@
 
 # بصيرة — BASIRA
 
-**من الأرقام… إلى البصيرة.**<br>
+**لا تكتفِ بالنظر إلى الأرقام. انظر من خلالها… ببصيرة.**<br>
 تطبيق Windows عربي لمديري حسابات التواصل الاجتماعي: يحلّل، ينشر، ويجهّز الحملات الإعلانية — وبياناتك لا تغادر جهازك.
 
 [![أحدث إصدار](https://img.shields.io/github/v/release/SaadHASSON1/basira?label=%D8%A3%D8%AD%D8%AF%D8%AB%20%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1&color=066262)](https://github.com/SaadHASSON1/basira/releases/latest)
@@ -61,7 +61,7 @@
 هذا المستودع يستضيف **موقع بصيرة** (GitHub Pages) و**ملفات التثبيت** في [الإصدارات](https://github.com/SaadHASSON1/basira/releases). شيفرة التطبيق نفسها خاصة.
 
 ```
-index.html          الصفحة الرئيسية وقصة «من الأرقام إلى البصيرة» المتحركة
+index.html          الصفحة الرئيسية وقصة الأعمدة التي تصير عينًا
 hero.js             حركة الشعار عند التمرير (GSAP + MorphSVG)
 privacy.html        سياسة الخصوصية (إنجليزي + عربي)
 terms.html          شروط الاستخدام

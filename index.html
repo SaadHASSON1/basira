@@ -34,27 +34,24 @@
 
   <main>
     <!-- The story: four platforms' numbers (bars and their trend) fold into the eye — from numbers to insight. -->
-    <section class="story" aria-label="من الأرقام إلى البصيرة">
+    <section class="story" aria-label="لا تكتفِ بالنظر إلى الأرقام. انظر من خلالها ببصيرة.">
       <div class="story-stage">
         <svg class="story-mark" viewBox="380 120 510 640" aria-hidden="true">
           <g class="story-grid">
             <line x1="400" x2="870" y1="317" y2="317"/><line x1="400" x2="870" y1="417" y2="417"/>
             <line x1="400" x2="870" y1="517" y2="517"/><line x1="400" x2="870" y1="617" y2="617"/>
           </g>
-          <path id="bar1" class="bar" d="M420 517H500V717H420Z"/>
-          <path id="bar2" class="bar" d="M536 397H616V717H536Z"/>
-          <path id="bar3" class="bar" d="M652 457H732V717H652Z"/>
-          <path id="bar4" class="bar" d="M768 247H848V717H768Z"/>
+          <g id="lowerG"><path id="bar1" class="bar" d="M420 517H500V717H420Z"/><path id="bar2" class="bar" d="M536 397H616V717H536Z"/></g>
+          <g id="upperG"><path id="bar3" class="bar" d="M652 457H732V717H652Z"/><path id="bar4" class="bar" d="M768 247H848V717H768Z"/></g>
           <polyline id="trend" points="460,490 576,370 692,430 808,222"/>
-          <circle id="dot" cx="808" cy="222" r="20"/>
+          <g id="pupilG"><circle id="dot" cx="808" cy="222" r="20"/></g>
           <path id="lidUpper" class="lid-target" d="M432 163H635C745 163 830 250 845 370C850 405 842 430 828 452C790 395 700 345 610 345H525C455 345 412 290 412 210V183C412 172 421 163 432 163Z"/>
           <path id="lidLower" class="lid-target" d="M838 717H635C525 717 440 630 425 510C420 475 428 450 442 428C480 485 570 535 660 535H745C815 535 858 590 858 670V697C858 708 849 717 838 717Z"/>
         </svg>
         <div class="story-words">
-          <p class="story-line" id="line1">أرقام من أربع منصات…</p>
-          <p class="story-line" id="line2">…تصير <strong>بصيرة</strong>.</p>
+          <p class="story-line" id="line1">لا تكتفِ بالنظر إلى الأرقام.</p>
+          <p class="story-line" id="line2">انظر من خلالها… <strong>ببصيرة</strong>.</p>
         </div>
-        <p class="story-hint" id="hint" aria-hidden="true">مرّر للأسفل</p>
       </div>
     </section>
 
