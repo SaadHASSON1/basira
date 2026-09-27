@@ -1,42 +1,166 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Basira — بصيرة</title>
-  <link rel="icon" type="image/png" href="mark.png">
-  <style>
-    body { font-family: system-ui, "Segoe UI", Tahoma, sans-serif; max-width: 760px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #17212b; }
-    header { display: flex; align-items: center; gap: .75rem; }
-    header img { width: 48px; height: 48px; }
-    h1 { color: #066262; margin: 0; }
-    section[dir="rtl"] { border-top: 1px solid #dfe4ea; margin-top: 2rem; padding-top: 1rem; }
-    a { color: #066262; }
-  </style>
+  <title>بصيرة — BASIRA</title>
+  <meta name="description" content="بصيرة: تطبيق Windows عربي لإدارة حسابات التواصل الاجتماعي — تحليل الأداء، النشر، والحملات الإعلانية بموافقتك، وكل البيانات على جهازك.">
+  <link rel="icon" type="image/png" href="brand/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <main>
-    <header><img src="mark.png" alt=""><h1>Basira</h1></header>
-    <p>Basira is a private desktop application for social media account management. An independent social media manager uses it to analyse the performance of the accounts he manages for his clients across <strong>YouTube, Instagram, Facebook and TikTok</strong>, to review the results of their paid campaigns, and to build data-based growth plans and experiments.</p>
-    <ul>
-      <li>It runs only on the manager's own Windows computer. There is no public service, no sign-up and no hosted server.</li>
-      <li>It connects to each platform only through that platform's official authorization, and only with <strong>read-only</strong> permissions. It never publishes, edits or deletes content, and it never creates or changes advertising campaigns or budgets.</li>
-      <li>Each client's data is kept separate from every other client's.</li>
-      <li>It is not offered to the public.</li>
-    </ul>
-    <p><a href="privacy.html">Privacy Policy</a> · Contact: <a href="mailto:saadhassun37@gmail.com">saadhassun37@gmail.com</a></p>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="brand" href="./" aria-label="بصيرة — الصفحة الرئيسية">
+        <img class="only-light" src="brand/mark.png" alt="" width="36" height="36">
+        <img class="only-dark" src="brand/mark-dark.png" alt="" width="36" height="36">
+        <span>بصيرة</span>
+      </a>
+      <nav aria-label="أقسام الصفحة">
+        <a href="#features">المزايا</a>
+        <a href="#privacy">الخصوصية</a>
+        <a href="#faq">أسئلة</a>
+        <a class="btn btn-small" href="#download">حمّل</a>
+      </nav>
+    </div>
+  </header>
 
-    <section dir="rtl" lang="ar">
-      <h2>بصيرة</h2>
-      <p>تطبيق مكتبي خاص لإدارة حسابات التواصل الاجتماعي، يستخدمه مدير حسابات مستقل لتحليل أداء حسابات عملائه على <strong>YouTube وInstagram وFacebook وTikTok</strong>، ومراجعة نتائج حملاتهم الإعلانية، وإعداد خطط نمو وتجارب مبنية على البيانات.</p>
-      <ul>
-        <li>يعمل على جهاز Windows الخاص بالمدير فقط، بلا خدمة عامة أو تسجيل أو خادم مستضاف.</li>
-        <li>يتصل بكل منصة عبر تفويضها الرسمي فقط وبصلاحيات <strong>قراءة فقط</strong>؛ لا ينشر ولا يعدّل ولا يحذف، ولا ينشئ حملات إعلانية أو يغيّر ميزانياتها.</li>
-        <li>بيانات كل عميل منفصلة عن بيانات غيره.</li>
-        <li>غير متاح للعموم.</li>
-      </ul>
-      <p><a href="privacy.html">سياسة الخصوصية</a></p>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">لمديري حسابات التواصل الاجتماعي</p>
+          <h1>كل حسابات عملائك في شاشة واحدة، <span class="accent">وقراراتك مبنية على أرقامهم</span></h1>
+          <p class="lead">بصيرة تطبيق عربي على Windows يجمع أداء YouTube وInstagram وFacebook وTikTok، يشرح لك ماذا حدث ولماذا، ينشر الفيديو على كل المنصات من نافذة واحدة، ويجهّز الحملات الإعلانية كاملة — ولا يُصرف قرش قبل موافقتك.</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#download">حمّل بصيرة لـ Windows</a>
+            <a class="btn" href="#features">شاهد ما يفعله</a>
+          </div>
+          <p class="fine">مجاني · Windows 10 و11 (64-بت) · بياناتك تبقى على جهازك</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <img class="only-light" src="brand/logo-full.png" alt="">
+          <img class="only-dark" src="brand/logo-full-dark.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="band">
+      <div class="wrap">
+        <h2>ما الذي تفعله بصيرة</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>أداء كل الحسابات</h3>
+            <p>تجمع المشاهدات والوصول والتفاعل والمتابعين من المنصات الأربع تلقائيًا، يومًا بيوم، وتفصل بين عملائك فلا تختلط بياناتهم أبدًا.</p>
+          </article>
+          <article class="card">
+            <h3>محلّل يشرح بالعربية</h3>
+            <p>تقارير أسبوعية وخطط نمو تستند إلى أرقام الحساب نفسه. كل رقم في التقرير مأخوذ من البيانات، وما لا يوجد فيها يُرفض ولا يُخترع.</p>
+          </article>
+          <article class="card">
+            <h3>انشر مرة، على كل المنصات</h3>
+            <p>ارفع الفيديو، اختر الغلاف والتفاصيل لكل منصة، وحدّد الموعد. بصيرة تنشره على YouTube وFacebook وInstagram وتتابع حالته.</p>
+          </article>
+          <article class="card">
+            <h3>حملات إعلانية بموافقتك</h3>
+            <p>تقترح بصيرة حملة Meta أو Google Ads كاملة مع سببها وتكلفتها، وتفحصها ضد سقف الإنفاق. لا تُرسل ولا تصرف شيئًا إلا بعد موافقتك على تلك الحملة بعينها.</p>
+          </article>
+          <article class="card">
+            <h3>تنبيهات لا تفوتك</h3>
+            <p>هبوط مفاجئ، إنفاق قارب السقف، أو ربط يوشك أن ينتهي — يصلك التنبيه في التطبيق وعلى هاتفك عبر Telegram، بلا أسماء عملاء ولا أرقام حساسة.</p>
+          </article>
+          <article class="card">
+            <h3>نسخ احتياطي تلقائي</h3>
+            <p>نسخة يومية من كل بياناتك، ونسخة ثانية خارج الجهاز في مجلد Google Drive أو OneDrive إن أردت.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <div class="wrap split">
+        <div>
+          <h2>بياناتك على جهازك، لا على خوادمنا</h2>
+          <p>بصيرة ليست موقعًا ولا خدمة سحابية. لا حساب تسجّله عندنا، ولا خادم تمر عبره بيانات عملائك.</p>
+        </div>
+        <ul class="checks">
+          <li>الربط بكل منصة عبر شاشة تفويضها الرسمية فقط، ويمكن لصاحب الحساب إلغاؤه في أي لحظة.</li>
+          <li>رموز التفويض ومفاتيح الخدمات محفوظة في مخزن بيانات الاعتماد في Windows، ولا تُكتب في أي ملف أو سجل.</li>
+          <li>لا نشر ولا إنفاق دون موافقة صريحة على ذلك المنشور أو تلك الحملة.</li>
+          <li>المحلّل يعمل محليًا على جهازك، أو عبر Claude إن اخترته أنت ووضعت مفتاحك.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <h2>ثلاث خطوات للبدء</h2>
+        <ol class="steps">
+          <li><strong>ثبّت البرنامج</strong><span>ملف تثبيت واحد، لمستخدمك فقط، دون صلاحيات مدير.</span></li>
+          <li><strong>أضف عميلًا واربط حساباته</strong><span>يسجّل صاحب الحساب دخوله في شاشة المنصة الرسمية مرة واحدة.</span></li>
+          <li><strong>دع بصيرة تعمل</strong><span>تجمع البيانات كل بضع ساعات وتنبّهك وتكتب لك التقارير.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="download">
+      <div class="wrap download">
+        <img class="only-light" src="brand/mark.png" alt="" width="72" height="72">
+        <img class="only-dark" src="brand/mark-dark.png" alt="" width="72" height="72">
+        <h2>حمّل بصيرة</h2>
+        <p>نسخة Windows 10 و11 (64-بت). الحجم نحو 60 ميغابايت، وتحتاج بعد التثبيت نحو 250 ميغابايت.</p>
+        <a class="btn btn-primary btn-large" href="https://github.com/SaadHASSON1/basira/releases/latest/download/Basira-Setup.exe">تحميل Basira-Setup.exe</a>
+        <p class="fine">
+          قد يعرض Windows رسالة «Windows protected your PC» لأن البرنامج جديد وغير موقّع بعد: اضغط «More info» ثم «Run anyway».
+          <br>كل الإصدارات وملاحظاتها: <a href="https://github.com/SaadHASSON1/basira/releases">صفحة الإصدارات</a>.
+        </p>
+        <p class="note">بصيرة الآن في مرحلة إطلاق خاص: ربط الحسابات يتطلب تطبيقات مطوّر مفعّلة على كل منصة. <a href="mailto:saadhassun37@gmail.com">راسلنا</a> لتحصل على الإعداد.</p>
+      </div>
+    </section>
+
+    <section id="faq" class="band">
+      <div class="wrap narrow">
+        <h2>أسئلة شائعة</h2>
+        <details>
+          <summary>هل تنشر بصيرة شيئًا أو تصرف مالًا من تلقاء نفسها؟</summary>
+          <p>لا. كل منشور وكل حملة ينتظر موافقتك عليه بالتحديد، والحملات تُنشأ متوقفة افتراضيًا. وتمنع بصيرة أي حملة تتجاوز سقف الإنفاق الذي حددته.</p>
+        </details>
+        <details>
+          <summary>هل أحتاج كرت شاشة قويًا؟</summary>
+          <p>لجمع البيانات والنشر والتنبيهات: لا. المحلّل المحلي يستفيد من كرت الشاشة، وإن لم يتوفر يمكنك اختيار Claude السحابي بمفتاحك، بتكلفة سنتات قليلة للتقرير.</p>
+        </details>
+        <details>
+          <summary>أين تُحفظ بيانات عملائي؟</summary>
+          <p>في مجلد على جهازك فقط، مع نسخ احتياطية يومية. لا شيء منها يُرفع إلينا.</p>
+        </details>
+        <details>
+          <summary>ما المنصات المدعومة؟</summary>
+          <p>YouTube وFacebook وInstagram وTikTok للأداء، وYouTube وFacebook وInstagram للنشر، وMeta Ads وGoogle Ads للحملات.</p>
+        </details>
+      </div>
+    </section>
+
+    <section lang="en" dir="ltr" class="en">
+      <div class="wrap narrow">
+        <h2>About Basira (English)</h2>
+        <p>Basira is a Windows desktop application for social media managers. It collects performance data from YouTube, Facebook, Instagram and TikTok for the accounts a manager handles for clients, writes data-based reports, publishes videos to YouTube, Facebook and Instagram, and prepares Meta and Google Ads campaigns. Nothing is published and no campaign is created without the user's explicit approval of that specific post or campaign.</p>
+        <p>Basira runs entirely on the user's computer: there is no Basira server and no sign-up. Platform access is granted only through each platform's official authorization screen and can be revoked at any time. See the <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a>. Contact: <a href="mailto:saadhassun37@gmail.com">saadhassun37@gmail.com</a>.</p>
+      </div>
     </section>
   </main>
+
+  <footer>
+    <div class="wrap foot-row">
+      <span>© 2026 بصيرة — BASIRA</span>
+      <nav aria-label="روابط">
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="terms.html">شروط الاستخدام</a>
+        <a href="mailto:saadhassun37@gmail.com">تواصل</a>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>
