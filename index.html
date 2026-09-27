@@ -10,6 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+  <script defer src="hero.js"></script>
 </head>
 <body>
   <header class="top">
@@ -29,6 +33,31 @@
   </header>
 
   <main>
+    <!-- The story: four platforms' numbers (bars and their trend) fold into the eye — from numbers to insight. -->
+    <section class="story" aria-label="من الأرقام إلى البصيرة">
+      <div class="story-stage">
+        <svg class="story-mark" viewBox="380 120 510 640" aria-hidden="true">
+          <g class="story-grid">
+            <line x1="400" x2="870" y1="317" y2="317"/><line x1="400" x2="870" y1="417" y2="417"/>
+            <line x1="400" x2="870" y1="517" y2="517"/><line x1="400" x2="870" y1="617" y2="617"/>
+          </g>
+          <path id="bar1" class="bar" d="M420 517H500V717H420Z"/>
+          <path id="bar2" class="bar" d="M536 397H616V717H536Z"/>
+          <path id="bar3" class="bar" d="M652 457H732V717H652Z"/>
+          <path id="bar4" class="bar" d="M768 247H848V717H768Z"/>
+          <polyline id="trend" points="460,490 576,370 692,430 808,222"/>
+          <circle id="dot" cx="808" cy="222" r="20"/>
+          <path id="lidUpper" class="lid-target" d="M432 163H635C745 163 830 250 845 370C850 405 842 430 828 452C790 395 700 345 610 345H525C455 345 412 290 412 210V183C412 172 421 163 432 163Z"/>
+          <path id="lidLower" class="lid-target" d="M838 717H635C525 717 440 630 425 510C420 475 428 450 442 428C480 485 570 535 660 535H745C815 535 858 590 858 670V697C858 708 849 717 838 717Z"/>
+        </svg>
+        <div class="story-words">
+          <p class="story-line" id="line1">أرقام من أربع منصات…</p>
+          <p class="story-line" id="line2">…تصير <strong>بصيرة</strong>.</p>
+        </div>
+        <p class="story-hint" id="hint" aria-hidden="true">مرّر للأسفل</p>
+      </div>
+    </section>
+
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
@@ -40,10 +69,6 @@
             <a class="btn" href="#features">شاهد ما يفعله</a>
           </div>
           <p class="fine">مجاني · Windows 10 و11 (64-بت) · بياناتك تبقى على جهازك</p>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <img class="only-light" src="brand/logo-full.png" alt="">
-          <img class="only-dark" src="brand/logo-full-dark.png" alt="">
         </div>
       </div>
     </section>
