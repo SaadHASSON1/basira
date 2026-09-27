@@ -41,12 +41,16 @@
   // The mark is centred by GSAP rather than CSS, so its own scale tween keeps the centring.
   gsap.set('.story-mark', { xPercent: -50, yPercent: -50, left: '50%', top: '50%' });
 
-  // A blink: the whole eye closes into a line through the pupil's centre (628, 440 in the drawing) and opens again.
-  // svgOrigin is in the drawing's own coordinates; a px transformOrigin is read against each group's own box, which
-  // dropped the pupil below the eye (seen 2026-09-27).
+  // A blink as an eye does it: the upper lid comes down and the lower one up until they meet over the pupil, which
+  // squeezes shut in place. The pupil's origin is given in the drawing's own coordinates (svgOrigin 628 440): a px
+  // transformOrigin is read against the group's own box and dropped the pupil below the eye (seen 2026-09-27).
+  // (Squashing the whole eye instead read as an image being flattened — the lids are what make it a blink.)
   function blink(tl, at, close, open) {
-    tl.to('#eyeG', { scaleY: 0.06, svgOrigin: '628 440', duration: close, ease: 'power2.in' }, at)
-      .to('#eyeG', { scaleY: 1, svgOrigin: '628 440', duration: open, ease: 'power2.out' }, at + close);
+    tl.to('#upperG', { y: 95, duration: close, ease: 'power2.in' }, at)
+      .to('#lowerG', { y: -95, duration: close, ease: 'power2.in' }, at)
+      .to('#pupilG', { scaleY: 0.1, svgOrigin: '628 440', duration: close, ease: 'power2.in' }, at)
+      .to(['#upperG', '#lowerG'], { y: 0, duration: open, ease: 'power2.out' }, at + close)
+      .to('#pupilG', { scaleY: 1, svgOrigin: '628 440', duration: open, ease: 'power2.out' }, at + close);
     return tl;
   }
 
@@ -85,7 +89,8 @@
     } else if (!on && idleTl) {
       idleTl.kill();
       idleTl = null;
-      gsap.set('#eyeG', { scaleY: 1, svgOrigin: '628 440' });
+      gsap.set(['#upperG', '#lowerG'], { y: 0 });
+      gsap.set('#pupilG', { scaleY: 1, svgOrigin: '628 440' });
     }
   }
 })();
