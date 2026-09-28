@@ -15,9 +15,9 @@
 ![Local first](https://img.shields.io/badge/data-on%20your%20PC-b86e12)
 
 [**⬇ تحميل بصيرة**](https://github.com/SaadHASSON1/basira/releases/latest/download/Basira-Setup.exe) ·
-[الموقع](https://saadhasson1.github.io/basira/) ·
+[الموقع](https://basira.x13labs.com/) ·
 [سجل الإصدارات](CHANGELOG.md) ·
-[سياسة الخصوصية](https://saadhasson1.github.io/basira/privacy.html) ·
+[سياسة الخصوصية](https://basira.x13labs.com/privacy.html) ·
 [English](#english)
 
 </div>
@@ -44,7 +44,7 @@
 - رموز التفويض والمفاتيح في **مخزن بيانات الاعتماد في Windows** — لا في ملف ولا في سجل.
 - **لا نشر ولا إنفاق** دون موافقة صريحة على ذلك المنشور أو تلك الحملة.
 
-التفاصيل الكاملة والصلاحيات المطلوبة لكل منصة: [سياسة الخصوصية](https://saadhasson1.github.io/basira/privacy.html).
+التفاصيل الكاملة والصلاحيات المطلوبة لكل منصة: [سياسة الخصوصية](https://basira.x13labs.com/privacy.html).
 
 ## التثبيت
 
@@ -81,7 +81,7 @@ tools/story_svg.py  يولّد brand/story-*.svg
 
 It is **local-first**: no Basira server, no sign-up. Platform access is granted through each platform's official authorization screen and can be revoked at any time; tokens live in Windows Credential Manager.
 
-[Download](https://github.com/SaadHASSON1/basira/releases/latest/download/Basira-Setup.exe) · [Privacy Policy](https://saadhasson1.github.io/basira/privacy.html) · [Terms](https://saadhasson1.github.io/basira/terms.html) · Contact: saadhassun37@gmail.com
+[Download](https://github.com/SaadHASSON1/basira/releases/latest/download/Basira-Setup.exe) · [Privacy Policy](https://basira.x13labs.com/privacy.html) · [Terms](https://basira.x13labs.com/terms.html) · Contact: saadhassun37@gmail.com
 
 </div>
 
