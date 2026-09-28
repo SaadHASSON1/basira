@@ -20,7 +20,7 @@
   <p class="fine"><em>Last updated: 2026-09-28. This version adds publishing, advertising management and the optional services, which Basira now offers.</em></p>
 
   <h2>Who operates Basira</h2>
-  <p>Basira is a Windows desktop application for social media account management, published by Saad Hasson (contact: <a href="mailto:saadhassun37@gmail.com">saadhassun37@gmail.com</a>). It is used by a social media manager to analyse, publish to and advertise the accounts he manages for his clients on YouTube, Facebook, Instagram and TikTok.</p>
+  <p>Basira is a Windows desktop application for social media account management, published by Saad Hasson (contact: <a href="mailto:contact@x13labs.com">contact@x13labs.com</a>). It is used by a social media manager to analyse, publish to and advertise the accounts he manages for his clients on YouTube, Facebook, Instagram and TikTok.</p>
   <p><strong>Basira runs on the user's own computer.</strong> There is no Basira account and no sign-up, and the data Basira collects, the reports it writes and the posts it prepares stay on that computer. We, the publisher, never receive them.</p>
   <h2>The linking relay</h2>
   <p>To let people link their accounts without registering developer apps of their own, Basira uses the publisher's apps on Google, Meta and TikTok. Those apps' secrets cannot be placed inside a program people download, so they are kept in a small relay at <code>auth.x13labs.com</code> (a Cloudflare Worker). The relay is used only for the moment an authorization code is exchanged for a token, when a token is refreshed or checked, and when access is revoked. It adds the app secret, forwards that single request to the platform's official token address, and returns the platform's answer to the user's computer. <strong>It stores nothing and logs nothing</strong>: no tokens, no account data, no statistics, no posts. People who register their own developer apps in Basira's settings do not use the relay at all.</p>
@@ -99,6 +99,6 @@
     </ul>
   </section>
 </main>
-<footer><div class="wrap foot-row"><span>© 2026 Basira</span><nav><a href="./">Home</a><a href="terms.html">Terms</a><a href="support.html">Support</a><a href="mailto:saadhassun37@gmail.com">Contact</a></nav></div></footer>
+<footer><div class="wrap foot-row"><span>© 2026 Basira</span><nav><a href="./">Home</a><a href="terms.html">Terms</a><a href="support.html">Support</a><a href="mailto:contact@x13labs.com">Contact</a></nav></div></footer>
 </body>
 </html>
