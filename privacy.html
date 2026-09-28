@@ -17,11 +17,13 @@
 </header>
 <main class="wrap narrow">
   <h1>Basira — Privacy Policy</h1>
-  <p class="fine"><em>Last updated: 2026-09-27. This version adds publishing, advertising management and the optional services, which Basira now offers.</em></p>
+  <p class="fine"><em>Last updated: 2026-09-28. This version adds publishing, advertising management and the optional services, which Basira now offers.</em></p>
 
   <h2>Who operates Basira</h2>
   <p>Basira is a Windows desktop application for social media account management, published by Saad Hasson (contact: <a href="mailto:saadhassun37@gmail.com">saadhassun37@gmail.com</a>). It is used by a social media manager to analyse, publish to and advertise the accounts he manages for his clients on YouTube, Facebook, Instagram and TikTok.</p>
-  <p><strong>Basira runs entirely on the user's own computer.</strong> There is no Basira server, no Basira account and no sign-up. We, the publisher, never receive any data from the application.</p>
+  <p><strong>Basira runs on the user's own computer.</strong> There is no Basira account and no sign-up, and the data Basira collects, the reports it writes and the posts it prepares stay on that computer. We, the publisher, never receive them.</p>
+  <h2>The linking relay</h2>
+  <p>To let people link their accounts without registering developer apps of their own, Basira uses the publisher's apps on Google, Meta and TikTok. Those apps' secrets cannot be placed inside a program people download, so they are kept in a small relay at <code>auth.x13labs.com</code> (a Cloudflare Worker). The relay is used only for the moment an authorization code is exchanged for a token, when a token is refreshed or checked, and when access is revoked. It adds the app secret, forwards that single request to the platform's official token address, and returns the platform's answer to the user's computer. <strong>It stores nothing and logs nothing</strong>: no tokens, no account data, no statistics, no posts. People who register their own developer apps in Basira's settings do not use the relay at all.</p>
 
   <h2>Platform connections and the permissions requested</h2>
   <p>Basira connects to a platform only after the account owner (or a person the platform authorizes to grant access) signs in on that platform's official authorization screen. Each permission below is requested only when the user turns on the feature that needs it.</p>
@@ -87,7 +89,8 @@
     <h2>سياسة الخصوصية — بصيرة</h2>
     <p class="fine">آخر تحديث: 27/9/2026 — أُضيف النشر وإدارة الإعلانات والخدمات الاختيارية.</p>
     <ul>
-      <li><strong>على جهازك فقط:</strong> بصيرة تطبيق Windows يعمل بالكامل على جهاز المستخدم. لا خادم ولا حساب ولا تسجيل، ولا يصلنا نحن أي شيء من بياناتك.</li>
+      <li><strong>على جهازك:</strong> بصيرة تطبيق Windows يعمل على جهاز المستخدم. لا حساب ولا تسجيل، والبيانات والتقارير والمنشورات تبقى على جهازك ولا يصلنا منها شيء.</li>
+      <li><strong>خادم الربط:</strong> ليربط الناس حساباتهم دون إنشاء تطبيقات مطوّر، تستعمل بصيرة تطبيقات الناشر على Google وMeta وTikTok. أسرار هذه التطبيقات محفوظة في خادم صغير على <code>auth.x13labs.com</code> (Cloudflare Worker) لا يُستعمل إلا لحظة تبادل رمز التفويض أو تجديده أو فحصه أو إلغائه: يضيف السر ويمرّر ذلك الطلب وحده إلى عنوان المنصة الرسمي ويعيد جوابها إلى جهازك. <strong>لا يحفظ شيئًا ولا يسجّل شيئًا</strong>. ومن يضيف تطبيقاته الخاصة في الإعدادات لا يمر بهذا الخادم أبدًا.</li>
       <li><strong>الربط:</strong> عبر شاشة التفويض الرسمية لكل منصة، ولا تُطلب كل صلاحية إلا عند تفعيل الميزة التي تحتاجها: القراءة والإحصاءات (YouTube وFacebook وInstagram وTikTok)، النشر (رفع فيديو وغلافه على YouTube، ونشر فيديو أو Reel على Facebook وInstagram)، والإعلانات (قراءة نتائج Meta Ads وGoogle Ads، وإنشاء حملة).</li>
       <li><strong>لا شيء دون موافقتك:</strong> لا يُنشر منشور ولا تُنشأ حملة ولا يُصرف مال إلا بعد موافقتك الصريحة على ذلك المنشور أو تلك الحملة بعينها، وضمن سقف الإنفاق الذي تحدده. لا إدارة تعليقات ولا رسائل، ولا حذف محتوى، ولا بيانات إيرادات.</li>
       <li><strong>خدمات اختيارية:</strong> Claude من Anthropic لكتابة التقارير إن اخترته ووضعت مفتاحك (تُرسل الإحصاءات ونصوص المنشورات وأسماء العملاء اللازمة، ولا تُرسل رموز التفويض)؛ تنبيهات Telegram (الفئة والعدد فقط)؛ ونسخة احتياطية في مجلد Google Drive أو OneDrive تختاره.</li>
