@@ -16,6 +16,7 @@
 
 [**⬇ تحميل بصيرة**](https://github.com/SaadHASSON1/basira/releases/latest/download/Basira-Setup.exe) ·
 [الموقع](https://saadhasson1.github.io/basira/) ·
+[سجل الإصدارات](CHANGELOG.md) ·
 [سياسة الخصوصية](https://saadhasson1.github.io/basira/privacy.html) ·
 [English](#english)
 
